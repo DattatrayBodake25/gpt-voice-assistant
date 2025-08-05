@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎤 Voice Interview Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #dbeafe;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #222;
+      text-align: center;
+    }
+
+    .instructions {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .chatbox {
+      margin-top: 1.5rem;
+      flex-grow: 1;
+      height: 350px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 1rem;
+      background-color: #f9fafb;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+
+    .user-message {
+      align-self: flex-start;
+      background-color: #dbeafe;
+      color: #1e3a8a;
+      border-top-left-radius: 0;
+    }
+
+    .bot-message {
+      align-self: flex-end;
+      background-color: #d1fae5;
+      color: #065f46;
+      border-top-right-radius: 0;
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 0.7rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .send-btn {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .send-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .mic-btn {
+      background-color: #10b981;
+      color: white;
+    }
+
+    .mic-btn:hover {
+      background-color: #059669;
+    }
+
+    .fallback {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎤 Voice Reflection Bot</h1>
+    <div class="instructions">Ask me question and I’ll answer like I’m in your shoes!</div>
+    <div class="chatbox" id="chatbox"></div>
+
+    <div class="controls">
+      <input type="text" id="userInput" placeholder="Ask a question..." />
+      <button class="send-btn" onclick="sendMessage()">Send</button>
+      <button class="mic-btn" onclick="startListening()">🎙️</button>
+    </div>
+
+    <div class="fallback" id="fallbackMsg" style="display: none;">
+      🎙️ If voice input doesn’t work, feel free to type your question.
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

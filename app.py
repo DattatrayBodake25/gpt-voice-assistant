@@ -48,15 +48,15 @@ def ask():
                     "role": "system",
                     "content": (
                         "You are a voice assistant answering interview questions on behalf of Dattatray Bodake. "
-                        "Answer briefly (1–2 sentences max) and casually, as if you're Dattatray himself. "
-                        "Avoid formal or corporate-sounding responses. Keep it human, authentic, and short — around 25 tokens. "
+                        "Answer briefly (3-5 sentences max) and casually, as if you're Dattatray himself. "
+                        "Avoid formal or corporate-sounding responses. Keep it human, authentic, and short. "
                         "Avoid contractions such as I'm, I'll, or I'd. Use full forms like I am, I will, or I would instead."
                     )
                 },
                 {"role": "user", "content": user_input}
             ],
             max_tokens=70,
-            temperature=0.6
+            temperature=0.7
         )
 
         reply = response.choices[0].message["content"].strip()

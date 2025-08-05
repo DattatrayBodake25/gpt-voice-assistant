@@ -12,7 +12,7 @@ function appendMessage(role, text) {
     div.innerHTML = `<strong>You:</strong> ${text}`;
   } else {
     div.classList.add("bot-message");
-    div.innerHTML = `<strong>Bot:</strong> ${text}`;
+    div.innerHTML = `<strong>Bot🔊:</strong> ${text}`;
   }
 
   chatbox.appendChild(div);

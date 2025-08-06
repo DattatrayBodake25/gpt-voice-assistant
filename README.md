@@ -83,10 +83,12 @@ A user-friendly **Voice Interview Bot** built with Flask, OpenAI's API, and brow
 
 📁 Folder Structure
 ```bash
+├── venv/ 
 ├── app.py               # Flask backend
 ├── templates/
 │   └── index.html       # Frontend UI (HTML + JS for mic)
-├── static/              # Optional CSS/JS if added
+├── static/
+│   └── script.js       # Optional CSS/JS if added
 ├── .env                 # (Not committed)
 ├── requirements.txt     # Python dependencies
 └── README.md            # You're here!

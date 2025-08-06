@@ -106,5 +106,4 @@ A user-friendly **Voice Interview Bot** built with Flask, OpenAI's API, and brow
 Thanks to:
    - OpenAI for the GPT API
    - Railway for free hosting
-   - You for testing this app!
 

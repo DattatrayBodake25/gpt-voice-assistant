@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔊 Voice Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app-container">
+    <div class="chat-card">
+      <h1>🤖 Voice Bot</h1>
+      <p class="subtitle">Ask me an interview-style question and I will answer as if I am <strong>Dattatray</strong>.</p>
+
+      <div class="chatbox" id="chatbox"></div>
+
+      <div class="controls">
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button class="send-btn" onclick="sendMessage()">➤</button>
+        <button class="mic-btn" id="micBtn" onclick="startListening()">🎙️</button>
+      </div>
+
+      <div class="fallback" id="fallbackMsg" style="display: none;">
+        🎤 Voice input works best on Chrome. If unavailable, please type your question.
+      </div>
+    </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
